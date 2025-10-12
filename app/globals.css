@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-	--font-*: initial;
-	--font-sans: var(--font-instrument-sans);
-	--font-serif: var(--font-instrument-serif);
+  --font-*: initial;
+  --font-sans: var(--font-instrument-sans);
+  --font-serif: var(--font-instrument-serif);
 }
 
 @theme inline {
