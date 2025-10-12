@@ -7,6 +7,9 @@ import { toast } from "sonner";
 import { SiNextdotjs, SiNotion } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 
+const warningMessage =
+  "You’re on the waitlist!\n We couldn’t send a confirmation email yet.\nTry using ankitmukhia157@gmail.com for testing.";
+
 export default function Home() {
   const [email, setEmail] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,6 +28,18 @@ export default function Home() {
 
     setIsLoading(true);
     try {
+      const notionRes = await fetch("/api/notion", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!notionRes.ok) {
+        throw new Error("Something went wrong with Notion.");
+      }
+
       const mailRes = await fetch("/api/email", {
         method: "POST",
         headers: {
@@ -37,20 +52,15 @@ export default function Home() {
         if (mailRes.status === 429) {
           throw new Error("Rate limited");
         }
+
+        const data = await mailRes.json();
+        if (data?.error) {
+          toast.warning(warningMessage);
+          return;
+        }
         throw new Error("Something went wrong with sending the email.");
       }
 
-      const notionRes = await fetch("/api/notion", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (!notionRes.ok) {
-        throw new Error("Something went wrong with Notion.");
-      }
       setEmail("");
       toast.success("You've been added to the waitlist!");
     } catch (err) {
