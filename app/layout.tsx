@@ -8,7 +8,8 @@ import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
-  weight: "400",
+  weight: ["400", "700"],
+  subsets: ["latin"],
 });
 
 const instrumentSerif = Instrument_Serif({
