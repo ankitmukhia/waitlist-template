@@ -40,7 +40,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SoundProvider>
-            <div className="fixed inset-0 -z-10 bg-[url('https://res.cloudinary.com/dtxxjwdml/image/upload/v1752248821/zgh21c1dp0wcbzgsuiyx.jpg')] dark:bg-[url('https://res.cloudinary.com/dtxxjwdml/image/upload/v1752250594/xms1h28owres0lmmiltw.jpg')] bg-cover bg-center bg-no-repeat" />
+            <div
+              className="fixed inset-0 -z-10 
+						bg-[url('https://res.cloudinary.com/dtxxjwdml/image/upload/f_auto,q_auto,w_1920/v1752248821/zgh21c1dp0wcbzgsuiyx.jpg')] 
+						dark:bg-[url('https://res.cloudinary.com/dtxxjwdml/image/upload/f_auto,q_auto,w_1920/v1752250594/xms1h28owres0lmmiltw.jpg')]
+						bg-cover bg-center bg-no-repeat"
+            />
 
             <div className="relative">
               <ThemeToggle />
