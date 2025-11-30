@@ -29,12 +29,13 @@ export const metadata: Metadata = {
       "A ready-to-deploy template designed for developers to quickly set up a waitlist. Clone, integrate your APIs, and deploy in minutes.",
     type: "website",
     url: "https://waitlist-tmpl.vercel.app",
+    locale: "en_US",
     siteName: "Quick Waitlist",
     images: [
       {
         url: "https://waitlist-tmpl.vercel.app/og-waitlist.png",
         width: 1200,
-        height: 676,
+        height: 630,
         alt: "Quick Waitlist Template",
       },
     ],
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
       {
         url: "https://waitlist-tmpl.vercel.app/twitter-waitlist.png",
         width: 1200,
-        height: 676,
+        height: 630,
         alt: "Quick Waitlist Template",
       },
     ],
