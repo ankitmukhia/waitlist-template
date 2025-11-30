@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       {
         url: "https://waitlist-tmpl.vercel.app/og-waitlist.png",
         width: 1200,
-        height: 630,
+        height: 676,
         alt: "Quick Waitlist Template",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       {
         url: "https://waitlist-tmpl.vercel.app/twitter-waitlist.png",
         width: 1200,
-        height: 630,
+        height: 676,
         alt: "Quick Waitlist Template",
       },
     ],
